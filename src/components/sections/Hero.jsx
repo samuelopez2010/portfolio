@@ -1,9 +1,19 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, ArrowRight, Download } from 'lucide-react'
+import { Github, Linkedin, Mail, ArrowRight, Download, Copy, Check, Send } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 export default function Hero() {
     const { t } = useTranslation()
+    const [copied, setCopied] = useState(false)
+    const email = "samuelopez2010@gmail.com"
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(email)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+    }
+
     return (
         <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             {/* Background decoration */}
@@ -95,10 +105,33 @@ export default function Hero() {
                         <Linkedin size={24} />
                         <span className="sr-only">LinkedIn</span>
                     </a>
-                    <a href="mailto:samuelopez2010@gmail.com" className="p-3 rounded-full bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:text-rose-500 dark:hover:text-rose-400 hover:border-rose-500 transition-colors">
-                        <Mail size={24} />
-                        <span className="sr-only">Email</span>
-                    </a>
+                    <div className="flex items-center p-1.5 rounded-2xl bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10 shadow-sm hover:border-brand-500/30 transition-colors">
+                        <span className="px-4 text-sm font-medium text-gray-600 dark:text-gray-400 select-all">
+                            {email}
+                        </span>
+                        <div className="flex items-center gap-1 border-l border-gray-200 dark:border-white/10 pl-2 pr-1">
+                            <a
+                                href={`mailto:${email}`}
+                                className="relative group p-2 rounded-xl text-gray-400 hover:text-brand-500 hover:bg-brand-50 dark:hover:bg-brand-500/10 transition-all"
+                            >
+                                <Send size={18} />
+                                <span className="sr-only">Send Email</span>
+                                <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10 shadow-md">
+                                    {t('hero.send_email', 'Send Email')}
+                                </div>
+                            </a>
+                            <button
+                                onClick={handleCopy}
+                                className="relative group p-2 rounded-xl text-gray-400 hover:text-brand-500 hover:bg-brand-50 dark:hover:bg-brand-500/10 transition-all"
+                            >
+                                {copied ? <Check size={18} className="text-emerald-500" /> : <Copy size={18} />}
+                                <span className="sr-only">Copy Email</span>
+                                <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10 shadow-md">
+                                    {copied ? t('hero.copied', 'Copied!') : t('hero.copy_email', 'Copy Email')}
+                                </div>
+                            </button>
+                        </div>
+                    </div>
                 </motion.div>
             </div>
         </section>

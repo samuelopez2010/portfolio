@@ -1,8 +1,18 @@
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { useState } from 'react'
+import { Github, Linkedin, Mail, Copy, Check, Send } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 export default function Footer() {
     const { t } = useTranslation()
+    const [copied, setCopied] = useState(false)
+    const email = "samuelopez2010@gmail.com"
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(email)
+        setCopied(true)
+        setTimeout(() => setCopied(false), 2000)
+    }
+
     return (
         <footer className="bg-white dark:bg-slate-950 border-t border-gray-100 dark:border-white/5 pt-16 pb-8">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,10 +31,33 @@ export default function Footer() {
                             <Linkedin size={24} />
                             <span className="sr-only">LinkedIn</span>
                         </a>
-                        <a href="mailto:samuelopez2010@gmail.com" className="text-gray-400 hover:text-rose-500 hover:scale-110 transition-all">
-                            <Mail size={24} />
-                            <span className="sr-only">Email</span>
-                        </a>
+                        <div className="flex items-center p-1 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-gray-100 dark:border-white/5 hover:border-brand-500/30 transition-colors">
+                            <span className="px-3 text-xs font-medium text-gray-500 dark:text-gray-400 select-all hidden sm:inline-block">
+                                {email}
+                            </span>
+                            <div className="flex items-center gap-1 sm:border-l border-gray-200 dark:border-white/10 sm:pl-1">
+                                <a
+                                    href={`mailto:${email}`}
+                                    className="relative group p-2 rounded-lg text-gray-400 hover:text-brand-500 hover:bg-brand-50 dark:hover:bg-brand-500/10 transition-all"
+                                >
+                                    <Send size={18} />
+                                    <span className="sr-only">Send Email</span>
+                                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10 shadow-md">
+                                        {t('hero.send_email', 'Send Email')}
+                                    </div>
+                                </a>
+                                <button
+                                    onClick={handleCopy}
+                                    className="relative group p-2 rounded-lg text-gray-400 hover:text-brand-500 hover:bg-brand-50 dark:hover:bg-brand-500/10 transition-all"
+                                >
+                                    {copied ? <Check size={18} className="text-emerald-500" /> : <Copy size={18} />}
+                                    <span className="sr-only">Copy Email</span>
+                                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-10 shadow-md">
+                                        {copied ? t('hero.copied', 'Copied!') : t('hero.copy_email', 'Copy Email')}
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
