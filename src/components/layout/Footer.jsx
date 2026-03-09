@@ -66,7 +66,7 @@ export default function Footer() {
                     <div className="flex gap-4">
                         <a href="#about" className="hover:text-brand-500 transition-colors">{t('nav.about')}</a>
                         <a href="#projects" className="hover:text-brand-500 transition-colors">{t('nav.projects')}</a>
-                        <a href="/CV_Samuel_Lopez.pdf" className="hover:text-brand-500 transition-colors">CV</a>
+                        <a href="/CV_Samuel_Lopez.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500 transition-colors">CV</a>
                     </div>
                 </div>
             </div>
