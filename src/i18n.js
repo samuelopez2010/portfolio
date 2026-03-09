@@ -183,7 +183,7 @@ const resources = {
                     {
                         "title": "CineMind Recommendation Engine",
                         "role": "Python developer",
-                        "description": "movie recommendation system leveraging Scikit-Learn (SVD algorithm) and the TMDB API. It delivers personalized suggestions by processing datasets to identify viewing patterns and user preferences.",
+                        "description": "Movie recommendation system leveraging Scikit-Learn (SVD algorithm) and the TMDB API. It delivers personalized suggestions by processing datasets to identify viewing patterns and user preferences.",
                         "tech": ["Python", "Scikit-Learn", "Machine Learning", "REST APIs"],
                         "category": "Secondary"
                     },
