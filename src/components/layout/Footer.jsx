@@ -64,8 +64,8 @@ export default function Footer() {
                 <div className="mt-12 pt-8 border-t border-gray-100 dark:border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                     <p>© {new Date().getFullYear()} Samuel López. {t('footer.rights')}</p>
                     <div className="flex gap-4">
-                        <a href="#about" className="hover:text-brand-500 transition-colors">{t('nav.about')}</a>
-                        <a href="#projects" className="hover:text-brand-500 transition-colors">{t('nav.projects')}</a>
+                        <a href="/#about" className="hover:text-brand-500 transition-colors">{t('nav.about')}</a>
+                        <a href="/#projects" className="hover:text-brand-500 transition-colors">{t('nav.projects')}</a>
                         <a href="/CV_Samuel_Lopez.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-brand-500 transition-colors">CV</a>
                     </div>
                 </div>
