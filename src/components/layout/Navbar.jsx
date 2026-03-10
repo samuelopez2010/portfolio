@@ -5,7 +5,18 @@ import { useTranslation } from 'react-i18next'
 export default function Navbar() {
     const { t, i18n } = useTranslation()
     const [isOpen, setIsOpen] = useState(false)
-    const [isDark, setIsDark] = useState(true)
+
+    // Initialize dark mode from localStorage or system preference
+    const [isDark, setIsDark] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const savedTheme = localStorage.getItem('theme')
+            if (savedTheme) {
+                return savedTheme === 'dark'
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches
+        }
+        return true
+    })
 
     const toggleLanguage = () => {
         const newLang = i18n.language.startsWith('en') ? 'es' : 'en'
@@ -15,8 +26,10 @@ export default function Navbar() {
     useEffect(() => {
         if (isDark) {
             document.documentElement.classList.add('dark')
+            localStorage.setItem('theme', 'dark')
         } else {
             document.documentElement.classList.remove('dark')
+            localStorage.setItem('theme', 'light')
         }
     }, [isDark])
 
