@@ -16,7 +16,7 @@ export default function AllProjectsPage() {
         },
         {
             ...t_projects[1],
-            links: { github: 'https://github.com/samuelopez2010/nexus-auction' }
+            links: { github: 'https://github.com/samuelopez2010/nexus-auctions' }
         },
         {
             ...t_projects[2],
