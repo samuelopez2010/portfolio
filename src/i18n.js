@@ -137,7 +137,7 @@ const resources = {
                         "title": "Nexus Auction Marketplace",
                         "role": "Systems Developer",
                         "description": "A live bidding platform where I engineered the backend logic to handle real-time competitive bidding and secure user authentication. Focused on creating a dynamic database structure for seamless category updates.",
-                        "tech": ["Python", "Django", "Stripe API", "Cloud Deployment"]
+                        "tech": ["Python", "Django", "Stripe API", "Business Logic"]
                     },
                     {
                         "title": "Plus58MD LMS Platform",
@@ -335,7 +335,7 @@ const resources = {
                         "title": "Marketplace de Subastas Nexus",
                         "role": "Desarrollador de Sistemas",
                         "description": "Plataforma de pujas en vivo donde diseñé la lógica backend para manejar pujas competitivas en tiempo real y autenticación segura de usuarios. Enfocado en crear una estructura de base de datos dinámica para actualizaciones de categorías sin interrupciones.",
-                        "tech": ["Python", "Django", "Stripe API", "Despliegue en la Nube"]
+                        "tech": ["Python", "Django", "Stripe API", "lógica de negocios"]
                     },
                     {
                         "title": "Plataforma LMS Plus58MD",
