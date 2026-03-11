@@ -40,10 +40,11 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6 flex flex-col sm:block items-center sm:items-stretch"
+                    className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6"
                 >
-                    <span>{t('hero.greeting')}</span>
-                    <span className="bg-gradient-to-r from-brand-500 to-purple-600 bg-clip-text text-transparent sm:ml-3 mt-1 sm:mt-0">
+                    {t('hero.greeting')}
+                    <br className="block sm:hidden" />
+                    <span className="bg-gradient-to-r from-brand-500 to-purple-600 bg-clip-text text-transparent sm:ml-3">
                         Samuel López
                     </span>
                 </motion.h1>
@@ -61,7 +62,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="max-w-2xl text-lg text-gray-600 dark:text-gray-400 mb-10"
+                    className="max-w-2xl text-lg text-gray-600 dark:text-gray-400 mb-10 px-4 sm:px-0 mt-4 sm:mt-0"
                 >
                     {t('hero.subtitle')}
                 </motion.p>
@@ -95,7 +96,7 @@ export default function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
-                    className="mt-16 flex items-center gap-6"
+                    className="mt-12 sm:mt-16 flex flex-wrap justify-center items-center gap-4 sm:gap-6 px-4"
                 >
                     <a href="https://github.com/samuelopez2010" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white dark:bg-slate-900 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-brand-500 transition-colors">
                         <Github size={24} />
