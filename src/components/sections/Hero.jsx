@@ -33,17 +33,17 @@ export default function Hero() {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
                     </span>
-                    Available for new opportunities
+                    {t('hero.status', 'Available for new opportunities')}
                 </motion.div>
 
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6"
+                    className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-6 flex flex-col sm:block items-center sm:items-stretch"
                 >
-                    {t('hero.greeting')}{' '}
-                    <span className="bg-gradient-to-r from-brand-500 to-purple-600 bg-clip-text text-transparent">
+                    <span>{t('hero.greeting')}</span>
+                    <span className="bg-gradient-to-r from-brand-500 to-purple-600 bg-clip-text text-transparent sm:ml-3 mt-1 sm:mt-0">
                         Samuel López
                     </span>
                 </motion.h1>

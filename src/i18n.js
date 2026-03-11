@@ -17,7 +17,8 @@ const resources = {
                 "greeting": "Hi, I'm",
                 "title": "Systems Engineer",
                 "subtitle": "I focus on building functional web applications and automation tools. I enjoy working on the entire development process, from designing system architecture and databases to developing the logic and interfaces that make them work.",
-                "view_projects": "View Projects"
+                "view_projects": "View Projects",
+                "status": "Available for new opportunities"
             },
             "about": {
                 "title": "About me",
@@ -215,7 +216,8 @@ const resources = {
                 "greeting": "Hola, soy",
                 "title": "Ingeniero de Sistemas",
                 "subtitle": "Me enfoco en construir aplicaciones web funcionales y herramientas de automatización. Disfruto trabajando en todo el proceso de desarrollo, desde el diseño de la arquitectura y bases de datos hasta el desarrollo de la lógica y de las interfaces.",
-                "view_projects": "Ver Proyectos"
+                "view_projects": "Ver Proyectos",
+                "status": "Disponible para nuevas oportunidades"
             },
             "about": {
                 "title": "Sobre mí",
